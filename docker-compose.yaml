@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  php:
+    build: ./docker/php
+    volumes:
+      - ./public:/var/www/html:cached
+      - ./src:/var/www/src:cached
+    ports:
+      - 80:80
+  mysql:
+    build: ./docker/mysql
+    volumes:
+      - mysql-data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=php-todo
+    ports:
+      - 3306:3306
+volumes:
+  mysql-data:
+    driver: local
