@@ -6,6 +6,12 @@ services:
     volumes:
       - ./public:/var/www/html:cached
       - ./src:/var/www/src:cached
+    environment:
+      - DB_HOST=mysql
+      - DB_PORT=3306
+      - DB_DATABASE=php-todo
+      - DB_USERNAME=root
+      - DB_PASSWORD=root
     ports:
       - 80:80
   mysql:
