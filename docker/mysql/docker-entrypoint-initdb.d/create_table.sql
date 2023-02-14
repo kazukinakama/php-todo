@@ -1,0 +1,9 @@
+use php-todo;
+
+CREATE TABLE `todos` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `title` VARCHAR(255) NOT NULL,
+  `is_done` TINYINT NOT NULL DEFAULT 0,
+  `created_at` TIMESTAMP(6) NULL DEFAULT NULL,
+  `updated_at` TIMESTAMP(6) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`));
